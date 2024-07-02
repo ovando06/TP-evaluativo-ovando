@@ -1,1 +1,42 @@
-<p>navbar works!</p>
+<mat-toolbar>
+    <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="seccion" >
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+    <mat-menu #seccion="matMenu">
+  
+      <button mat-button routerLink="/inicio">Inicio</button>
+  
+      <button mat-button [matMenuTriggerFor]="producto">Productos</button>
+    </mat-menu>
+  
+    <span><img src="../../../../../assets/logo.jpeg" alt="" width="50px" lenght="50px">VIAL TRUCKS</span>
+  
+    <!--se van a mostrar cuando la pantalla sea mayor a 700px-->
+    <!--Botón para la vista de inicio-->
+    <button id="menuInicio" mat-menu-item routerLink="/inicio">Inicio</button>
+  
+  
+    <!--MENU DESPLEGABLE -> PRODUCTOS -->
+    <button id="menuProducto" mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+    <mat-menu #producto="matMenu">
+      <button mat-menu-item routerLink="/servicios">Servicios</button>
+      <button mat-menu-item routerLink="/acerca">Quienes somos</button>
+      <button mat-menu-item routerLink="/contacto">Contacto</button>
+  
+    </mat-menu>
+    <span class="example-spacer"></span>
+  
+    <!-- inicio de sesion y el registro de un nuevo usuario-->
+    <button mat-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+    <mat-menu #usuario="matMenu">
+      <button mat-menu-item routerLink="/registro">Registrarse</button>
+      <button mat-menu-item routerLink="/inicio-sesion">Iniciar Sesión</button>
+    </mat-menu>
+  
+    <!--carrito-->
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  
+  </mat-toolbar>
