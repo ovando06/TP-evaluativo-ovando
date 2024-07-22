@@ -1,9 +1,8 @@
+
 .example-spacer {
     flex: 1 1 auto;
   }
-#navegador{
-    padding: 0;
-  }
+
 .btn{
   margin-top: 10px;
 }
@@ -35,3 +34,19 @@
       display: none;
     }
   }
+  
+  .logo {
+    width: 65px; /* Ajusta el tamaño del contenedor según sea necesario */
+    height: 65px;
+    border-radius: 50%; /* Hace que el contenedor sea redondo */
+    overflow: hidden; /* Oculta cualquier parte del logo que sobresalga del marco */
+}
+
+h1{
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.logo img {
+    width: 100%; /* Asegura que la imagen ocupe todo el espacio dentro del contenedor */
+ 
+}
