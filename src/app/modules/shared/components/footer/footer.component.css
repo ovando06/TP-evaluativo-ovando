@@ -1,0 +1,38 @@
+.bi {
+    width: 30px;
+    height: 30px;
+    
+}
+.logo{
+    justify-content: left;
+}
+
+.categoria:hover {
+    color: rgb(181, 181, 15);
+    cursor: pointer;
+    font-family: 'Bevan', serif;
+    font: bold;
+    font-size: 155%;
+}
+
+.categoria {
+    font-family: 'Archivo Black', sans-serif;
+    font: bold;
+    color: yellow;
+    font-size: 155%;
+}
+
+.fondofoo {
+    background-color: grey;
+  
+}
+
+h4{
+    font-size: 157%;
+    font: bold;
+
+}
+
+#num{
+    padding-top: 15px;
+}
