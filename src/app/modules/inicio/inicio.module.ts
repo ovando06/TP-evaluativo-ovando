@@ -9,10 +9,16 @@ import { InicioComponent } from './components/inicio/inicio.component';
 
 //COMPONENTES MATERIAL
 import {MatButtonModule} from '@angular/material/button';
+import { CardComponent } from './components/card/card.component';
+
+//COMPONENTES MATERIAL
+
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
     InicioComponent,
+    CardComponent
    
   ],
   imports: [
@@ -20,12 +26,14 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     InicioRoutingModule,
     MatButtonModule,
+    MatCardModule
 
   ],
   exports: [
     //EXPORTAMOS AL RESTO DE LA PÁGINA
     MatButtonModule,
-    InicioComponent
+    InicioComponent,
+    MatCardModule
   ]
 })
 export class InicioModule { }

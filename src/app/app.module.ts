@@ -21,8 +21,7 @@ import { SharedModule } from './modules/shared/components/shared.module';
 import { environment } from 'src/enviroment/enviroment';//vincula a la BD con la app
 import { AngularFireModule } from '@angular/fire/compat';// trabaja con las colecciones de infomarcion
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';// trabaja con la autentificacion
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';// trabaja con imagenes y archivos
-
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 @NgModule({ 
   declarations: [
     AppComponent,

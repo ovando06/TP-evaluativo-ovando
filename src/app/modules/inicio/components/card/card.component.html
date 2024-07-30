@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+
+  
+      <div class="col">
+        <div *ngFor="let i of info" class="contenido">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title class="h5">{{i.servicio}}</mat-card-title>
+              
+            </mat-card-header>
+            <img mat-card-image
+              src="{{i.imagen}}"
+              alt="st" class="img">
+
+            <mat-card-actions>
+              <button mat-button>Contratar</button>
+
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
