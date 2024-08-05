@@ -20,8 +20,7 @@ body {
 
 }
 
-.example-card {
-  height: 750px;
+.card {
     margin: 0 auto;
     background-color: #fff;
     border-radius: 8px;
@@ -30,7 +29,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.example-card:hover {
+.card:hover {
     /* Efecto de zoom */
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgb(255, 255, 255);

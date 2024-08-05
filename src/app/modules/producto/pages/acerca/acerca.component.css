@@ -1,4 +1,20 @@
-h1,h2{
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Kalnia+Glaze:wght@100..700&family=Suez+One&family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Kalnia+Glaze:wght@100..700&family=Play:wght@400;700&family=Suez+One&family=Teko:wght@300..700&family=Ultra&display=swap');
+h2{
+    text-align: left;
     font-style: bold;
 }
+h1{
+    text-align: center;
+    font-family: "Anton", sans-serif;
+}
+.up{
+    font-family: "Anton", sans-serif;
+    font-size: 1,5rem;
+    
+}
+.text{
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
