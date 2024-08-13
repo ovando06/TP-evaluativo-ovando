@@ -5,19 +5,18 @@
 
   <mat-menu #seccion="matMenu">
 
-    <button mat-button routerLink="/inicio">Inicio</button>
+    <button mat-button routerLink="/inicio" class="text">Inicio</button>
 
-    <button mat-button [matMenuTriggerFor]="producto">Productos</button>
+    <button mat-button [matMenuTriggerFor]="producto" class="text">Productos</button>
   </mat-menu>
 
 
   <div>
-    <div class="logo">
+    <div class="logo" id="logo1">
       <img src="../../../../../assets/logo.jpeg" alt="">
     </div>
   </div>
-  <h1>vial trucks</h1>
-
+  <p class="titul">Vial Trucks</p>
 
 
 
@@ -37,7 +36,7 @@
   <span class="example-spacer"></span>
 
   <!-- inicio de sesion y el registro de un nuevo usuario-->
-  <button mat-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+  <button mat-button [matMenuTriggerFor]="usuario"><mat-icon class="icono">person</mat-icon></button>
   <mat-menu #usuario="matMenu">
     <button mat-menu-item routerLink="/registro">Registrarse</button>
     <button mat-menu-item routerLink="/inicio-sesion">Iniciar Sesión</button>
@@ -45,7 +44,8 @@
 
   <!--carrito-->
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>shopping_cart</mat-icon>
+    <mat-icon class="icono">shopping_cart</mat-icon>
   </button>
 
 </mat-toolbar>
+

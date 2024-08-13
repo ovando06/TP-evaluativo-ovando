@@ -1,24 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Suez+One&family=Ultra&display=swap');
-img{
-    padding-bottom: 5%;
+h1{
+    text-align: center;
+    font-family: "Playwrite PE", cursive;
 }
-h5{
-    font-family: 'Suez One';
-}
-body{
-    background-color: grey;
-}
-.card {
-    /* Estilos básicos de la tarjeta */
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card:hover {
-    /* Efecto de zoom */
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgb(255, 255, 255);
-  }

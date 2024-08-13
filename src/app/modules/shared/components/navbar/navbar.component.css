@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Playwrite+PE:wght@100..400&display=swap');
 .example-spacer {
     flex: 1 1 auto;
   }
@@ -10,43 +10,77 @@
   @media (min-width: 300px) and (max-width: 700px){
     mat-toolbar{
       background-color: rgb(241, 241, 15);
-      color: black;
       
     }
 
+    #logo1{
+      width: 60px;
+    }
+
     #menuInicio{
+      font-family: "New Amsterdam", sans-serif;
+      padding-left: 20%;
+      font-size: 140%;
       display: none;
+      color: black;
     }
 
     #menuProducto{
+      font-family: "New Amsterdam", sans-serif;
+      padding-left: 20%;
+      font-size: 140%;
       display: none;
+      color: black;
     }
   }
-  
+ 
 /*CORRESPONDE A PANTALLAS GRANDES --> EJEMPLO, computadoras*/
   @media (min-width: 700px){
     mat-toolbar{
-      background-color:grey;
-     
+      background-color:#FAD514;
+    
     }
-
+  
     #menuSecciones{
       display: none;
+    }
+
+    #menuInicio{
+      font-family: "New Amsterdam", sans-serif;
+      padding-left: 20%;
+      font-size: 140%;
+      color: black;
+    }
+
+    #menuProducto{
+      font-family: "New Amsterdam", sans-serif;
+      padding-left: 20%;
+      font-size: 140%;
+      color: black;
     }
   }
   
   .logo {
-    width: 65px; /* Ajusta el tamaño del contenedor según sea necesario */
-    height: 65px;
+    width: 60px; /* Ajusta el tamaño del contenedor según sea necesario */
+    height: 60px;
     border-radius: 50%; /* Hace que el contenedor sea redondo */
     overflow: hidden; /* Oculta cualquier parte del logo que sobresalga del marco */
 }
 
-h1{
+.titul{
+  margin-top: 9px; 
   padding-left: 1%;
   padding-right: 1%;
+  color: black;
+  font-family: "Playwrite PE", cursive;
+  font:bold;
+  font-size: 150%;
 }
 .logo img {
     width: 100%; /* Asegura que la imagen ocupe todo el espacio dentro del contenedor */
  
+}
+
+.icono{
+  color: black;
 }
