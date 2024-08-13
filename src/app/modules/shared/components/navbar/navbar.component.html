@@ -22,15 +22,16 @@
 
   <!--se van a mostrar cuando la pantalla sea mayor a 700px-->
   <!--Botón para la vista de inicio-->
-  <button id="menuInicio" mat-menu-item routerLink="/inicio">Inicio</button>
+  <button id="menuInicio" mat-button routerLink="/inicio">Inicio</button>
 
+  <span class="example-spacer"></span>
 
   <!--MENU DESPLEGABLE -> PRODUCTOS -->
-  <button id="menuProducto" mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+  <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
   <mat-menu #producto="matMenu">
-    <button mat-menu-item routerLink="/servicios">Servicios</button>
-    <button mat-menu-item routerLink="/acerca">Quienes somos</button>
-    <button mat-menu-item routerLink="/contacto">Contacto</button>
+    <button mat-menu-item routerLink="/servicios" class="found">Servicios</button>
+    <button mat-menu-item routerLink="/acerca" class="found">Quienes somos</button>
+    <button mat-menu-item routerLink="/contacto" class="found">Contacto</button>
 
   </mat-menu>
   <span class="example-spacer"></span>

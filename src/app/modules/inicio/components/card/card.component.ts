@@ -23,7 +23,7 @@ export class CardComponent {
       },
       {
         id:"",
-        servicio:"Trabajo en equipos estacionarios",
+        servicio:"Trabajo equipos estacionarios",
         imagen:"../../../../../assets/trabajo en equipos estacionarios.png",
 
       },

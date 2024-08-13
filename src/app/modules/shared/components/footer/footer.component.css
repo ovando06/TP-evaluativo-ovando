@@ -1,57 +1,60 @@
 .bi {
-    width: 30px;
-    height: 30px;
-    
+  width: 30px;
+  height: 30px;
+
 }
-.logo{
-    justify-content: left;
+
+.logo {
+  justify-content: left;
 }
 
 .categoria:hover {
-    color:  rgb(66, 66, 66);
-    cursor: pointer;
-    font-family: 'Bevan', serif;
-    font: bold;
-    font-size: 155%;
+  color: rgb(66, 66, 66);
+  cursor: pointer;
+  font-family: 'Bevan', serif;
+  font: bold;
+  font-size: 155%;
 }
 
 .categoria {
- 
-    font: bold;
-    color: black;
-    font-size: 155%;
+  font-family: "Tilt Warp", sans-serif;
+  font: bold;
+  color: black;
+  font-size: 155%;
 }
-#fondofoo{  
+
+#fondofoo {
   background-color: #FAD514;
-  margin-top:19rem ;
+  margin-top: 19rem;
 }
 
-h4{
-    font-size: 157%;
-    font: bold;
-    color: black;
+h4 {
+  font-family: "Tilt Warp", sans-serif;
+  font-size: 157%;
+  font: bold;
+  color: black;
 
 }
 
-#num{
-    padding-top: 15px;
+#num {
+  padding-top: 15px;
 }
 
-@media (min-width: 300px) and (max-width: 700px){
-   #fondofoo{
+@media (min-width: 300px) and (max-width: 700px) {
+  #fondofoo {
     background-color: rgb(66, 66, 66);
     color: white;
-   }
   }
-  
-/*CORRESPONDE A PANTALLAS GRANDES --> EJEMPLO, computadoras*/
-  @media (min-width: 700px){
-    mat-toolbar{
-      background-color:grey;
-     
-    }
+}
 
-    #menuSecciones{
-      display: none;
-    }
+/*CORRESPONDE A PANTALLAS GRANDES --> EJEMPLO, computadoras*/
+@media (min-width: 700px) {
+  mat-toolbar {
+    background-color: grey;
+
   }
+
+  #menuSecciones {
+    display: none;
+  }
+}
