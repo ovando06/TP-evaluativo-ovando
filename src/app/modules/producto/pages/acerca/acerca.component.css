@@ -14,7 +14,12 @@ h1{
     
 }
 .text{
-    margin-right: 3%;
-    margin-left: 3%;
+    justify-content: center;
+    margin-left: 10%;
+    background-color: rgba(61, 59, 59, 0.599);
+    border-radius: 10px;
+    width: 1200px;
+    margin-top: 2%;
+    justify-content: center;
 }
 

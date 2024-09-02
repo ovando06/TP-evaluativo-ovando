@@ -5,9 +5,9 @@
 
   <mat-menu #seccion="matMenu">
 
-    <button mat-button routerLink="/inicio" class="text">Inicio</button>
+    <button mat-menu-item routerLink="/inicio" class="text">Inicio</button>
 
-    <button mat-button [matMenuTriggerFor]="producto" class="text">Productos</button>
+    <button mat-menu-item [matMenuTriggerFor]="producto" class="text">Productos</button>
   </mat-menu>
 
 
