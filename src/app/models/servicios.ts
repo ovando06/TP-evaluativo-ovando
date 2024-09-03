@@ -3,6 +3,7 @@ export interface Servicios {
       id: string;
       imagen: string;
       servicio: string;
+      alt:string;
      
 
      
