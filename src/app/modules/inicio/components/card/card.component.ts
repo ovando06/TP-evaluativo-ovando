@@ -19,24 +19,28 @@ export class CardComponent {
         id:"",
         servicio:"Equipos de enganche",
         imagen:"../../../../../assets/equipos de enganche.png",
+        alt:"equipos de enganche"
 
       },
       {
         id:"",
         servicio:"Trabajo equipos estacionarios",
         imagen:"../../../../../assets/trabajo en equipos estacionarios.png",
+        alt:"equipos estacionarios"
 
       },
       {
         id:"",
         servicio:"Trabajo en flota liviana",
         imagen:"../../../../../assets/trabajo en flota liviana.png",
+        alt:"flota liviana"
 
       },
       {
         id:"",
         servicio:"Trabajo en flota pesada",
         imagen:"../../../../../assets/trabajo en flota pesada1.png",
+        alt:"flota pesada"
 
       },
     ]

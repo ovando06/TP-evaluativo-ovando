@@ -1,4 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
 
+@media (min-width: 360px) and (max-width: 700px) {
+    .contenido {
+        width: 200px;
+    }
+    mat-toolbar {
+      background-color: rgb(241, 241, 15);
+  
+    }
+  
+    .logo {
+      width: 10px;
+    }
+  
+    #menuInicio {
+      font-family: "Tilt Warp", sans-serif;
+      font-size: 140%;
+      display: none;
+      color: black;
+    }
+  
+    #menuProducto {
+      font-family: "Tilt Warp", sans-serif;
+      font-size: 140%;
+      display: none;
+      color: black;
+    }
+  }
+  
+  /*CORRESPONDE A PANTALLAS GRANDES --> EJEMPLO, computadoras*/
+  @media (min-width: 700px) {
+    .contenido {
+        width: 18rem;
+    }
+    mat-toolbar {
+      background-color: #FAD514;
+  
+    }
+  
+    #menuSecciones {
+      display: none;
+    }
+  
+    #menuInicio {
+      font-family: "Tilt Warp", sans-serif;
+      margin-left: 15%;
+      font-size: 140%;
+      color: black;
+    }
+  
+    #menuProducto {
+      font-family: "Tilt Warp", sans-serif;
+      margin-left: 15%;
+      font-size: 140%;
+      color: black;
+    }
+  }
+  
+
+
+
+
+
+body{
+    transition: all 1.5s ease;
+}
+
+#toggle{
+    display: none;
+}
+
+#label_toggle{
+    position: static;
+    cursor: pointer;
+}
+
+.dark{
+    background-color: black;
+    color: white;
+    transition: all 1.5s ease;
+}
+*{
+    color: black;
+}
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: rgb(212, 209, 209); }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
