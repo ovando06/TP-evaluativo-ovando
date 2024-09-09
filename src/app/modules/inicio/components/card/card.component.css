@@ -43,6 +43,7 @@ body {
     display: flex;
     font-family: "Archivo Black", sans-serif;
     font-weight: 200;
+    justify-content: center;
 }
 
 .btn:hover {

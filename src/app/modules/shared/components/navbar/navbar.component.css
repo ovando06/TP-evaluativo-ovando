@@ -7,63 +7,12 @@
 .btn {
   margin-top: 10px;
 }
-
-/*CORRESPONDE A PANTALLAS PEQUEÑAS --> EJEMPLO, celulares*/
-@media (min-width: 300px) and (max-width: 700px) {
-  mat-toolbar {
-    background-color: rgb(241, 241, 15);
-
-  }
-
-  #logo1 {
-    width: 60px;
-  }
-
-  #menuInicio {
-    font-family: "Tilt Warp", sans-serif;
-    font-size: 140%;
-    display: none;
-    color: black;
-  }
-
-  #menuProducto {
-    font-family: "Tilt Warp", sans-serif;
-    font-size: 140%;
-    display: none;
-    color: black;
-  }
+mat-toolbar{
+  background-color: #FAD514;
 }
-
-/*CORRESPONDE A PANTALLAS GRANDES --> EJEMPLO, computadoras*/
-@media (min-width: 700px) {
-  mat-toolbar {
-    background-color: #FAD514;
-
-  }
-
-  #menuSecciones {
-    display: none;
-  }
-
-  #menuInicio {
-    font-family: "Tilt Warp", sans-serif;
-    margin-left: 15%;
-    font-size: 140%;
-    color: black;
-  }
-
-  #menuProducto {
-    font-family: "Tilt Warp", sans-serif;
-    margin-left: 15%;
-    font-size: 140%;
-    color: black;
-  }
-}
-
 .logo {
-  width: 60px;
   /* Ajusta el tamaño del contenedor según sea necesario */
-  height: 60px;
+  
   border-radius: 50%;
   /* Hace que el contenedor sea redondo */
   overflow: hidden;
@@ -83,7 +32,7 @@
   color: black;
   font-family: "Playwrite PE", cursive;
   font: bold;
-  font-size: 150%;
+  
 }
 
 .logo img {
