@@ -15,6 +15,18 @@
         font-size: 110%;
     }
 
+    .categoria{
+        font-size: 90%;
+    }
+
+    .categoria:hover{
+        font-size: 90%;
+    }
+
+    u{
+        font-size: 75%;
+    }
+
   
     #logo1 {
       width: 40px;

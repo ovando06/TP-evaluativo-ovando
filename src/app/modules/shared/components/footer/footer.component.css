@@ -13,17 +13,17 @@
   cursor: pointer;
   font-family: 'Bevan', serif;
   font: bold;
-  font-size: 155%;
+
 }
 
 .categoria {
   font-family: "Tilt Warp", sans-serif;
   font: bold;
   color: black;
-  font-size: 155%;
+
 }
 
-#fondofoo {
+.fondofoo {
   background-color: #FAD514;
   width: 100%;
 }
