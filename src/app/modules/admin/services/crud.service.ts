@@ -56,7 +56,7 @@ export class CrudService {
      * accedemos a la coleccion "productos" de la BD, buscamos el ID del producto
      * seleccionado y lo actualizamos con el metodo "update", enviando la nueva informacion
      */
-    return this.database.collection('productos').doc(idProducto).update(nuevaData);
+    return this.database.collection('producto').doc(idProducto).update(nuevaData);
   }
    //eliminar productos
    eliminarProducto(idProducto: string){

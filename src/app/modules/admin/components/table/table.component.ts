@@ -83,6 +83,23 @@ export class TableComponent {
     })
   }
 
+    // EDITAR PRODUCTOS
+  // Se envía y llama al momento que tocamos botón "Editar" de la tabla
+  mostrarEditar(productoSeleccionado: Producto){
+    this.productoSeleccionado = productoSeleccionado;
+    /*
+      Toma los valores del producto seleccionado y los va a
+      autocompletar en el formulario del modal (menos el ID)
+    */
+    this.producto.setValue({
+      nombre: productoSeleccionado.nombre,
+      descripcion: productoSeleccionado.descripcion,
+      categoria: productoSeleccionado.categoria,
+      imagen: productoSeleccionado.imagen,
+      alt: productoSeleccionado.alt
+    })
+  }
+
 editarProducto(){
   let datos: Producto = {
     //solo id producto no se modifica por el usuario

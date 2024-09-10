@@ -24,7 +24,7 @@
   
         <!--ACCIONES-->
         <td>
-          <button id="btn-edit" title="Editar" type="button" data-bs-toggle="#editarProducto" data-bs-target="modal"  class="btn btn-outline-primary">
+          <button id="btn-edit" title="Editar" type="button"  (click)="mostrarEditar(producto)" data-bs-toggle="modal" data-bs-target="#editarproductos"  class="btn btn-outline-primary">
             <mat-icon>edit</mat-icon>
           </button>
         </td>
@@ -187,7 +187,7 @@
         <div class="modal-footer">
   
           <button type="button" class="btn btn-outline-succes" (click)="editarProducto()"
-            data-bs-dismiss="modal">Guardar</button>
+            data-bs-dismiss="modal">Guardar Cambios</button>
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
   
         </div>

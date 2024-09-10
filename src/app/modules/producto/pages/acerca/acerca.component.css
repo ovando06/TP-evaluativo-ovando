@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kalnia+Glaze:wght@100..700&family=Suez+One&family=Ultra&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kalnia+Glaze:wght@100..700&family=Play:wght@400;700&family=Suez+One&family=Teko:wght@300..700&family=Ultra&display=swap');
-h2{
+
+h2 {
     text-align: left;
     font-style: bold;
 }
-h1{
+
+h1 {
     text-align: center;
     font-family: "Anton", sans-serif;
 }
-.up{
+
+.up {
     font-family: "Anton", sans-serif;
-    font-size: 1,5rem;
-    
+
+
 }
-.text{
-    justify-content: center;
-    margin-left: 10%;
-    background-color: rgba(61, 59, 59, 0.599);
-    border-radius: 10px;
-    width: 1200px;
-    margin-top: 2%;
-    justify-content: center;
+.imagen {
+    transition: transform 5s ease;
+    position: relative;
 }
 
+.imagen:hover {
+    transform: translateX(150px);
+}
