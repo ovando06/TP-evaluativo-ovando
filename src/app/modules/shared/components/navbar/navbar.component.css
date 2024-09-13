@@ -10,9 +10,7 @@
 mat-toolbar{
   background-color: #FAD514;
 }
-.logo {
-  /* Ajusta el tamaño del contenedor según sea necesario */
-  
+.logo {  
   border-radius: 50%;
   /* Hace que el contenedor sea redondo */
   overflow: hidden;
@@ -24,6 +22,17 @@ mat-toolbar{
   border-color: #FAD514;
   color: black;
 }
+.barra{
+  background-color: #FAD514;
+  font-family: "Tilt Warp", sans-serif;
+}
+.personi{
+  font-family: "Tilt Warp", sans-serif;
+  background-color: #FAD514;
+  border-color: #FAD514;
+  color: black;
+}
+ 
 
 .titul {
   margin-top: 9px;

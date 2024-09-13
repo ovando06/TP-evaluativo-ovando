@@ -5,9 +5,9 @@
 
   <mat-menu #seccion="matMenu">
 
-    <button mat-menu-item routerLink="/inicio" class="text">Inicio</button>
+    <button mat-menu-item routerLink="/inicio" class="barra">Inicio</button>
 
-    <button mat-menu-item [matMenuTriggerFor]="producto" class="text">Productos</button>
+    <button mat-menu-item [matMenuTriggerFor]="producto" class="barra">Productos</button>
   </mat-menu>
 
 
@@ -22,7 +22,7 @@
 
   <!--se van a mostrar cuando la pantalla sea mayor a 700px-->
   <!--Botón para la vista de inicio-->
-  <button id="menuInicio" mat-button routerLink="/inicio">Inicio</button>
+  <button id="menuInicio" mat-button routerLink="/inicio" class="personi">Inicio</button>
 
   <span class="example-spacer"></span>
 
@@ -39,8 +39,8 @@
   <!-- inicio de sesion y el registro de un nuevo usuario-->
   <button mat-button [matMenuTriggerFor]="usuario"><mat-icon class="icono">person</mat-icon></button>
   <mat-menu #usuario="matMenu">
-    <button mat-menu-item routerLink="/registro">Registrarse</button>
-    <button mat-menu-item routerLink="/inicio-sesion">Iniciar Sesión</button>
+    <button mat-menu-item routerLink="/registro" class="personi">Registrarse</button>
+    <button mat-menu-item routerLink="/inicio-sesion" class="personi">Iniciar Sesión</button>
   </mat-menu>
 
   <!--carrito-->

@@ -13,14 +13,59 @@ h1 {
 
 .up {
     font-family: "Anton", sans-serif;
-
-
+    
 }
-.imagen {
-    transition: transform 5s ease;
+u{
+    text-align: center;
+    justify-content: center;
+}
+
+
+.container {
     position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
-.imagen:hover {
-    transform: translateX(150px);
+.imagen {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+/*
+animation: Controla la duración y el retraso de cada imagen. La primera imagen tiene una animación que empieza inmediatamente,
+ mientras que la segunda tiene un retraso de 0.5 segundos.
+ 
+forwards: Asegura que las imágenes permanezcan en su posición final después de la animación.*/
+
+.imagen1 {
+    left: -250px;
+    /* Empieza fuera del viewport a la izquierda */
+    animation: slideIn1 1s ease-in-out forwards;
+}
+
+.imagen2 {
+    left: -250px;
+    /* Empieza fuera del viewport a la izquierda */
+    animation: slideIn2 1s ease-in-out 0.5s forwards;
+    /* Segunda imagen con retraso */
+}
+
+/*@keyframes: Define el movimiento de las imágenes de izquierda a derecha.*/
+@keyframes slideIn1 {
+    to {
+        left: 100px;
+        /* Posición final */
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn2 {
+    to {
+        left: 700px;
+        /* Posición final */
+        opacity: 1;
+    }
 }

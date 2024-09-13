@@ -6,6 +6,10 @@ import { AuthService } from '../../services/auth.service';
 import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 //importamos componente de rutas de angular
 import { Router } from '@angular/router';
+//importamos paqueteria de criptacion
+import* as CryptoJS from 'crypto-js';
+//paqueteria de alertas personalizadas
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -61,19 +65,43 @@ export class RegistroComponent {
       const res = await this.servicioAuth.registrar(credenciales.email,credenciales.password)
       //el metodo THEN es una promesa que devuelve el mismo valor si todo sale bien
       .then(res => {
-        alert("se pudo registrar con exito");
+        Swal.fire({
+          title: "Buen trabajo!",
+          text: "Se pudo registrar con éxito!",
+          icon: "success"
+        });
         
         //el metodo NAVIGATE nos redirecciona a otra vista
         this.servicioRutas.navigate(['/inicio']);
       })
       //el metodo CATCH captura una falla y la vuelve un error cuando la promesa salga mal
       .catch(error =>{
-        alert("Hubo un error al registrar un nuevo usuario \n"+error);
+        Swal.fire({
+          title: "Oh no!",
+          text: "Hubo un error al registrar un nuevo usuario \n"+error,
+          icon: "error"
+        });
+    
       })
-
+      
+      //constante UID captura el identificado de la BD
       const uid = await this.servicioAuth.obtenerUid();
 
+      //
+      this.usuarios.uid= uid;
+
+      /**
+       * SHA256: es un algoritmo de hash seguro que toma una enttrada (en este ctaso la contraseña) 
+       * y prodyce una cadena de caracteres HEXADECIMAL que va a representar a su hash
+       * toString: convierte el resultado en la cadena de caracteres legible
+       */
+      this.usuarios.password= CryptoJS.SHA256(this.usuarios.password).toString();
+      
+      //llamamos a la funcion guardarUsuario()
       this.guardarusuario();
+
+      //llamamos a la funcion limpiarInputs()
+      this.limpiarInputs();
 
    
       
@@ -85,8 +113,8 @@ export class RegistroComponent {
     //notificamos al usuario que se registro bien
     //alert("¡te registraste con exito!");
 
-    //
-    this.limpiarInputs();
+    // 
+   
 
     //mostramos credenciales por consola
     //console.log(credenciales);
