@@ -24,21 +24,21 @@ export class CardComponent {
       },
       {
         id:"",
-        servicio:"Trabajo equipos estacionarios",
+        servicio:"Equipos estacionarios",
         imagen:"../../../../../assets/trabajo en equipos estacionarios.png",
         alt:"equipos estacionarios"
 
       },
       {
         id:"",
-        servicio:"Trabajo en flota liviana",
+        servicio:"Flota liviana",
         imagen:"../../../../../assets/trabajo en flota liviana.png",
         alt:"flota liviana"
 
       },
       {
         id:"",
-        servicio:"Trabajo en flota pesada",
+        servicio:"Flota pesada",
         imagen:"../../../../../assets/trabajo en flota pesada1.png",
         alt:"flota pesada"
 

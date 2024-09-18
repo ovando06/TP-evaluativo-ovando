@@ -1,0 +1,12 @@
+.imagen {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Hace el borde circular */
+    border: 5px solid #3498db; /* Añade un marco de color */
+    transition: transform 0.2s ease-in-out; /* Define la transición */
+}
+
+/* Efecto al pasar el cursor */
+.imagen:hover {
+    transform: rotate(360deg); /* Rotación completa */
+}

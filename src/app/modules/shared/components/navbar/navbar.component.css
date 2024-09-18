@@ -20,17 +20,29 @@ mat-toolbar{
   font-family: "Tilt Warp", sans-serif;
   background-color: #FAD514;
   border-color: #FAD514;
-  color: black;
 }
+
+.found:hover{
+  background-color: #FAD514;
+  color: white;
+}
+
 .barra{
   background-color: #FAD514;
   font-family: "Tilt Warp", sans-serif;
+  text-align: left;
+  justify-content: left;
 }
 .personi{
   font-family: "Tilt Warp", sans-serif;
   background-color: #FAD514;
   border-color: #FAD514;
   color: black;
+}
+#menuProducto{
+  background-color: #FAD514;
+  border: #FAD514;
+
 }
  
 

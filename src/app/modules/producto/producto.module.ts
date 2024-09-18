@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { ProductoRoutingModule } from './producto-routing.module';
 import { AcercaComponent } from './pages/acerca/acerca.component';
-import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { MantenimientoComponent } from './pages/servicios/mantenimiento/mantenimiento.component';
 
 
 @NgModule({
   declarations: [
     AcercaComponent,
-    ServiciosComponent,
-    ContactoComponent
+    ContactoComponent,
+    MantenimientoComponent
   ],
   imports: [
     CommonModule,

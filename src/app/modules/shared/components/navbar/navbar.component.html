@@ -28,12 +28,20 @@
 
   <!--MENU DESPLEGABLE -> PRODUCTOS -->
   <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
-  <mat-menu #producto="matMenu">
-    <button mat-menu-item routerLink="/servicios" class="found">Servicios</button>
+  <mat-menu #producto="matMenu" >
+    <button mat-menu-item class="found" [matMenuTriggerFor]="servicios">Servicios</button>
     <button mat-menu-item routerLink="/acerca" class="found">Quienes somos</button>
     <button mat-menu-item routerLink="/contacto" class="found">Contacto</button>
 
   </mat-menu>
+
+  <mat-menu #servicios="matMenu">
+    <button mat-menu-item routerLink="/servicios/mantenimiento" class="found" >Mantenimiento y Reparaciones</button>
+ 
+
+  </mat-menu>
+
+
   <span class="example-spacer"></span>
 
   <!-- inicio de sesion y el registro de un nuevo usuario-->
@@ -47,6 +55,10 @@
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon class="icono">shopping_cart</mat-icon>
   </button>
+
+  <!--Label para modo oscuro-->
+  <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
+  <input type="checkbox" id="toggle" (click)="cambiarfondo()">
 
 </mat-toolbar>
 

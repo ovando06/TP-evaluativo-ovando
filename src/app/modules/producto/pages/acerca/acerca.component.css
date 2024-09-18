@@ -21,6 +21,8 @@ u{
 }
 
 
+/*Las medidas vh y vw son medidas relativas de acuerdo al viewport. Vh hace referencia a la centésima parte
+ de la altura del viewport y vw a la centésima parte del ancho del viewport. 1vh = 1% de la altura del viewport*/
 .container {
     position: relative;
     width: 100vw;
