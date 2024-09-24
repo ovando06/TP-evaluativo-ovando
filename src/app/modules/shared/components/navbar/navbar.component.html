@@ -47,18 +47,20 @@
   <!-- inicio de sesion y el registro de un nuevo usuario-->
   <button mat-button [matMenuTriggerFor]="usuario"><mat-icon class="icono">person</mat-icon></button>
   <mat-menu #usuario="matMenu">
-    <button mat-menu-item routerLink="/registro" class="personi">Registrarse</button>
-    <button mat-menu-item routerLink="/inicio-sesion" class="personi">Iniciar Sesión</button>
+    <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/registro" class="personi">Registrarse</button>
+    <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/inicio-sesion" class="personi">Iniciar Sesión</button>
+    <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesion</button>
   </mat-menu>
 
   <!--carrito-->
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <!--<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon class="icono">shopping_cart</mat-icon>
-  </button>
+  </button>-->
+  
 
   <!--Label para modo oscuro-->
-  <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
+  <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon icono1"></i></label>
   <input type="checkbox" id="toggle" (click)="cambiarfondo()">
 
 </mat-toolbar>
-
+<ng-content></ng-content>

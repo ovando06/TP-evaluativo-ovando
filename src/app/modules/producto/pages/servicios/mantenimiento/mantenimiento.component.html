@@ -1,24 +1,48 @@
-<div class="container px-4 text-center">
+<div class="container px-4 text-center" >
     <div class="row gx-5">
       <div class="col">
        <div class="p-3">
-        <img src="./../../../../../../assets/flotapesada.png" alt="" class="imagen">
+        <img src="./../../../../../../assets/flotapesada.png" alt="" class="imagen" (click)="mostrar1=!mostrar1">
        </div>
       </div>
       <div class="col">
         <div class="p-3">
-            <img src="./../../../../../../assets/flotaliviana.png" alt="" class="imagen">
+            <img src="./../../../../../../assets/flotaliviana.png" alt="" class="imagen" (click)="mostrar2=!mostrar2">
         </div>
       </div>
       <div class="col">
         <div class="p-3">
-            <img src="./../../../../../../assets/estacionarios.png" alt="" class="imagen">
+            <img src="./../../../../../../assets/estacionarios.png" alt="" class="imagen" (click)="mostrar3=!mostrar3">
         </div>
       </div>
       <div class="col">
         <div class="p-3">
-            <img src="./../../../../../../assets/enganche.png" alt="" class="imagen">
+            <img src="./../../../../../../assets/enganche.png" alt="" class="imagen" (click)="mostrar4=!mostrar4">
         </div>
       </div>
     </div>
+  </div>
+  <!--VA A MOSTRAR INFORMACIÒN DE FLOTA PESADA-->
+  <div class="infor" *ngIf="mostrar1">
+    <h1>hola</h1>
+    
+
+  </div>
+  <!--VA A MOSTRAR INFORMACIÒN DE FLOTA LIVIANA-->
+  <div class="infor" *ngIf="mostrar2">
+    <h1>hola2</h1>
+    
+
+  </div>
+  <!--VA A MOSTRAR INFORMACIÒN DE GENERADORES-->
+  <div class="infor" *ngIf="mostrar3">
+    <h1>hola3</h1>
+    
+
+  </div>
+  <!--VA A MOSTRAR INFORMACIÒN DE EQUIPO VIAL-->
+  <div class="infor" *ngIf="mostrar4">
+    <h1>hola4</h1>
+    
+
   </div>
