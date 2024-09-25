@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 .imagen {
     width: 200px;
     height: 200px;
@@ -10,3 +11,34 @@
 .imagen:hover {
     transform: rotate(360deg); /* Rotación completa */
 }
+
+.espe{
+    font-family: "Playwrite PE", cursive;
+    text-align: center;
+}
+h1{
+    text-align: left;
+}
+.texti{
+   
+    text-align: center;
+}
+
+/*opacity: 0; oculta el <h1> al principio.
+transform: translateY(50px); desplaza el texto hacia abajo 50 píxeles.
+La animación definida por @keyframes slideUp mueve el <h1> hacia su posición original y cambia su opacidad de 0 a 1.*/
+.animated-h1 {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 2s ease-in-out forwards;
+  }
+  /*animation: slideUp 2s ease-in-out forwards; aplica la animación, donde 2s es la duración, 
+  ease-in-out controla la velocidad del cambio, y forwards asegura que el estado final de la animación se mantenga.*/
+  
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

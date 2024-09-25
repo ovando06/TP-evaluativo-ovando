@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=New+Amsterdam&family=Playwrite+PE:wght@100..400&family=Tilt+Warp&display=swap');
 @media (min-width: 360px) and (max-width:700px){
+
+
   .personi{
       font-family: "Tilt Warp", sans-serif;
       background-color: #FAD514;
@@ -181,7 +183,7 @@ body{
 }
 
 .dark{
-    background-color: rgb(29, 28, 28);
+    background-color: rgb(59, 56, 56);
     color: white;
     transition: all 1.5s ease;
 }

@@ -43,7 +43,7 @@ cambiarfondo(){
     if(checked){
       label_toggle!.innerHTML = '<i class="fa-solid fa-sun"></i>';
     }else{
-      label_toggle!.innerHTML = '<i class="fa-solid fa-moon icono1"></i>'
+      label_toggle!.innerHTML = '<i class="fa-solid fa-moon"></i>'
     }
   }
 }

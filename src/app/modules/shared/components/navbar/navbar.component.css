@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=New+Amsterdam&family=Playwrite+PE:wght@100..400&family=Tilt+Warp&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -45,7 +45,7 @@ mat-toolbar{
 
 
 }
-.icono1{
+fa-moon{
   color: black;
 }
  
@@ -55,8 +55,8 @@ mat-toolbar{
   padding-left: 1%;
   padding-right: 1%;
   color: black;
-  font-family: "Playwrite PE", cursive;
-  font: bold;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 140%;
   
 }
 

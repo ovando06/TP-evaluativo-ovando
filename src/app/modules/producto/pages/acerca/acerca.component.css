@@ -1,5 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kalnia+Glaze:wght@100..700&family=Suez+One&family=Ultra&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kalnia+Glaze:wght@100..700&family=Play:wght@400;700&family=Suez+One&family=Teko:wght@300..700&family=Ultra&display=swap');
+.typewriter{
+    overflow: hidden; /* Asegura que el texto esté oculto hasta que comience la animación */
+    border-right: .15em solid grey; /* Crea el efecto del cursor */
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    margin: 0 auto; /* Centra el texto */
+    
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end;
+}
+
+/* Efecto de escritura */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Efecto de parpadeo del cursor */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    10% { border-color: grey; }
+}
+
+.text{
+    margin-left: 3%;
+    margin-right: 3%;
+}
 
 h2 {
     text-align: left;
@@ -9,6 +34,7 @@ h2 {
 h1 {
     text-align: center;
     font-family: "Anton", sans-serif;
+    font-size: 250%;
 }
 
 .up {
