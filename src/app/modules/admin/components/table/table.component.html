@@ -43,7 +43,7 @@
   <!--MODAL -> LIVE DEMO-->
   <!-- BOTON DE AGREGAR NUEVOS PRODUCTOS-->
   <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregarProducto">
-    Agregar un nuevo producto
+    Agregar un nuevo Servicio
   </button>
   
   <!-- Modal para agregar nuevo producto -->
@@ -52,14 +52,14 @@
       <div class="modal-content">
         <div class="modal-header">
           <!--TITULO DEL MODAL-->
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Ingrese un nuevo producto</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Ingrese un nuevo servicio</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <!--CUERPO DEL MODAL-->
         <div [formGroup]="producto" class="modal-body">
           <!--NOMBRE-->
           <div class="mb-3">
-            <label class="form-label">Ingrese el nombre del producto: </label>
+            <label class="form-label">Ingrese el nombre del servicio: </label>
             <input class="form-control" type="text" formControlName="nombre" placeholder="Ej: Trabajo en flota liviana">
           </div>
   
