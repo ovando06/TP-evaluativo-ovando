@@ -1,5 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+h1{
+    font-family: "Lilita One", sans-serif;
+    line-height: 1.8; /* Aumenta el espacio entre líneas */
+    letter-spacing: 1px; /* Aumenta el espacio entre letras */
+    font-size: 250%;
+}
+
 .mapa{
     justify-content: center;
     text-align: center;
     border-radius: 10%;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#formi{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+/* Contenedor del formulario */
+.formula{
+    background-color: #f6de69;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    
+   
+
+}
+
+/* Estilo del título */
+.formula h1 {
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 24px;
+}
+
+/* Estilos de las etiquetas y campos del formulario */
+label {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Estilo para el botón */
+.button {
+    background-color: #FAD514;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* Efectos al interactuar con los elementos */
+input:focus,
+textarea:focus {
+    border-color: #c8a910;
+    outline: none;
+}
+
+.button:hover {
+    background-color: #c8a910;
+}
+
+/* Diseño responsivo */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-container h2 {
+        font-size: 20px;
+    }
 }

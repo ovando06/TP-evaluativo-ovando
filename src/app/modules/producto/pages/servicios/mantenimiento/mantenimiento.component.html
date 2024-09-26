@@ -1,62 +1,199 @@
-<div class="container px-4 text-center" >
+<div class="container px-4 text-center">
   <br>
-  <h1 class="espe animated-h1">Nuestra especialidad es...</h1>
+  <h1 class="animated texti">Nuestra especialidad es...</h1>
   <br>
-  <h1 class="animated-h1 texti">Ofrecer una amplia gama de servicios, incluyendo
+  <h1 class="animated ">Ofrecer una amplia gama de servicios, incluyendo
     motores Diésel, convencionales, estacionarios y electrónicos, mecánica
     general para vehículos, chapa y pintura, electricidad, electrónica, e
     instalación de equipamiento . Diagnostico computarizado y regeneración
     de DPF. Adaptamos nuestros conocimientos a las necesidades
     específicas de cada cliente.
-    </h1>
-    <br>
-    z
-    <h1 class="animated-h1 texti"><i class="bi bi-arrow-up-left-square">Haz click al vehículo que estés interesado mantener o reparar</i></h1>
-    <br>
+  </h1>
+  <br>
+
+  <h1 class="animated texti"><i class="bi bi-arrow-up-left-square">Haz click al vehículo que estés interesado y obtené
+      más información</i></h1>
+  <br>
+  <div class="row gx-5">
+    <div class="col">
+      <div class="p-3">
+        <img src="./../../../../../../assets/flotapesada.png" alt="" class="imagen" (click)="mostrar1=!mostrar1">
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-3">
+        <img src="./../../../../../../assets/flotaliviana.png" alt="" class="imagen" (click)="mostrar2=!mostrar2">
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-3">
+        <img src="./../../../../../../assets/estacionarios.png" alt="" class="imagen" (click)="mostrar3=!mostrar3">
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-3">
+        <img src="./../../../../../../assets/enganche.png" alt="" class="imagen" (click)="mostrar4=!mostrar4">
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+<!--VA A MOSTRAR INFORMACIÒN DE FLOTA PESADA-->
+<div class="infor" *ngIf="mostrar1">
+  <!--GUTTERS DE LAS IMÁGENES E INFO-->
+  <div class="container px-4 text-center">
     <div class="row gx-5">
       <div class="col">
-       <div class="p-3">
-        <img src="./../../../../../../assets/flotapesada.png" alt="" class="imagen" (click)="mostrar1=!mostrar1">
-       </div>
-      </div>
-      <div class="col">
-        <div class="p-3">
-            <img src="./../../../../../../assets/flotaliviana.png" alt="" class="imagen" (click)="mostrar2=!mostrar2">
+        <!--CONTENEDOR TEXTO-->
+        <div class="p-3 pesa">
+          La flota pesada de camiones es clave en el transporte de mercancías. El mantenimiento y reparación
+          son esenciales para asegurar su funcionamiento y prolongar su vida útil, previniendo fallos y retrasos. Esto
+          incluye
+          revisiones periódicas, cambio de piezas desgastadas y diagnóstico de averías, con un enfoque en el
+          mantenimiento
+          preventivo para evitar problemas mayores y costosas reparaciones.
+
+        </div>
+        <div>
+          <button type="button" routerLink="/contacto" class="btn contra btn-lg">CONTRATAR</button>
         </div>
       </div>
       <div class="col">
         <div class="p-3">
-            <img src="./../../../../../../assets/estacionarios.png" alt="" class="imagen" (click)="mostrar3=!mostrar3">
-        </div>
-      </div>
-      <div class="col">
-        <div class="p-3">
-            <img src="./../../../../../../assets/enganche.png" alt="" class="imagen" (click)="mostrar4=!mostrar4">
+          <!--CONTENEDOR DE IMAGENES-->
+          <div class="image-container">
+            <img src="./../../../../../../assets/flotapesada2.png" alt="Imagen Vertical" class="vertical-image">
+            <div class="horizontal-images">
+              <img src="./../../../../../../assets/flotapesada1.png" alt="Imagen Horizontal 1" class="horizontal-image">
+              <img src="./../../../../../../assets/flotapesada3.png" alt="Imagen Horizontal 2" class="horizontal-image">
+            </div>
+          </div>
+          <!--FIN CONTENEDOR-->
         </div>
       </div>
     </div>
   </div>
-  <!--VA A MOSTRAR INFORMACIÒN DE FLOTA PESADA-->
-  <div class="infor" *ngIf="mostrar1">
-    <h1>hola</h1>
-    
+</div>
 
-  </div>
-  <!--VA A MOSTRAR INFORMACIÒN DE FLOTA LIVIANA-->
-  <div class="infor" *ngIf="mostrar2">
-    <h1>hola2</h1>
-    
+<!--VA A MOSTRAR INFORMACIÒN DE FLOTA LIVIANA-->
+<div class="infor" *ngIf="mostrar2">
+  <!--GUTTERS DE LAS IMÁGENES E INFO-->
+  <div class="container px-4 text-center">
+    <div class="row gx-5">
+      <div class="col">
+        <!--CONTENEDOR TEXTO-->
+        <div class="p-3 pesa">
+          La flota liviana de camionetas se utiliza principalmente para transporte de cargas más pequeñas. El
+          mantenimiento
+          y reparación son cruciales para garantizar su funcionamiento óptimo y evitar fallos. Esto incluye revisiones
+          regulares,
+          cambio de piezas y diagnóstico de posibles problemas, con un enfoque en el mantenimiento preventivo para
+          evitar averías
+          costosas y prolongar su vida útil.
 
+        </div>
+        <div>
+          <button type="button" routerLink="/contacto" class="btn contra btn-lg">CONTRATAR</button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-3">
+          <!--CONTENEDOR DE IMAGENES-->
+          <div class="image-container">
+            <img src="./../../../../../../assets/flotaliviana1.png" alt="Imagen Vertical" class="vertical-image">
+            <div class="horizontal-images">
+              <img src="./../../../../../../assets/flotaliviana2.png" alt="Imagen Horizontal 1"
+                class="horizontal-image">
+              <img src="./../../../../../../assets/flotaliviana3.jpeg" alt="Imagen Horizontal 2"
+                class="horizontal-image">
+            </div>
+          </div>
+          <!--FIN CONTENEDOR-->
+        </div>
+      </div>
+    </div>
   </div>
-  <!--VA A MOSTRAR INFORMACIÒN DE GENERADORES-->
-  <div class="infor" *ngIf="mostrar3">
-    <h1>hola3</h1>
-    
 
-  </div>
-  <!--VA A MOSTRAR INFORMACIÒN DE EQUIPO VIAL-->
-  <div class="infor" *ngIf="mostrar4">
-    <h1>hola4</h1>
-    
 
+</div>
+
+
+<!--VA A MOSTRAR INFORMACIÒN DE GENERADORES-->
+<div class="infor" *ngIf="mostrar3">
+  <!--GUTTERS DE LAS IMÁGENES E INFO-->
+  <div class="container px-4 text-center">
+    <div class="row gx-5">
+      <div class="col">
+        <!--CONTENEDOR TEXTO-->
+        <div class="p-3 pesa">
+          Mantener el generador (alternador) del vehículo es esencial para el funcionamiento eléctrico y evitar fallas.
+          Convierte la energía mecánica del motor en electricidad, alimentando sistemas como luces y aire acondicionado,
+          y carga la batería. Un alternador en mal estado puede descargar la batería y causar problemas al arrancar. Un
+          mantenimiento
+          regular previene fallos y garantiza el buen rendimiento del vehículo.
+
+        </div>
+        <div>
+          <button type="button" routerLink="/contacto" class="btn contra btn-lg">CONTRATAR</button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-3">
+          <!--CONTENEDOR DE IMAGENES-->
+          <div class="image-container">
+            <img src="./../../../../../../assets/generador2.png" alt="Imagen Vertical" class="vertical-image">
+            <div class="horizontal-images">
+              <img src="./../../../../../../assets/generador2.png" alt="Imagen Horizontal 1" class="horizontal-image">
+              <img src="./../../../../../../assets/generador3.png" alt="Imagen Horizontal 2" class="horizontal-image">
+            </div>
+          </div>
+          <!--FIN CONTENEDOR-->
+        </div>
+      </div>
+    </div>
   </div>
+
+
+</div>
+
+
+<!--VA A MOSTRAR INFORMACIÒN DE EQUIPO VIAL-->
+<div class="infor" *ngIf="mostrar4">
+  <!--GUTTERS DE LAS IMÁGENES E INFO-->
+  <div class="container px-4 text-center">
+    <div class="row gx-5">
+      <div class="col">
+        <!--CONTENEDOR TEXTO-->
+        <div class="p-3 pesa">
+
+          Mantener y reparar los equipos de enganche es crucial para garantizar la seguridad y el rendimiento al
+          remolcar. Estos equipos, que conectan el vehículo con remolques o cargas pesadas, deben estar en buen estado
+          para evitar accidentes o daños durante el transporte.
+
+          El desgaste, la corrosión o piezas sueltas pueden afectar la estabilidad del remolque y aumentar el riesgo de
+          fallos. Inspeccionar y reparar regularmente el enganche asegura que el equipo funcione correctamente,
+          manteniendo una conexión segura y protegiendo tanto el vehículo como la carga.
+
+        </div>
+        <div>
+          <button type="button" routerLink="/contacto" class="btn contra btn-lg">CONTRATAR</button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-3">
+          <!--CONTENEDOR DE IMAGENES-->
+          <div class="image-container">
+            <img src="./../../../../../../assets/enganche2.png" alt="Imagen Vertical" class="vertical-image">
+            <div class="horizontal-images">
+              <img src="./../../../../../../assets/enganche1.png" alt="Imagen Horizontal 1"
+                class="horizontal-image">
+              <img src="./../../../../../../assets/enganche3.jpeg" alt="Imagen Horizontal 2"
+                class="horizontal-image">
+            </div>
+          </div>
+          <!--FIN CONTENEDOR-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

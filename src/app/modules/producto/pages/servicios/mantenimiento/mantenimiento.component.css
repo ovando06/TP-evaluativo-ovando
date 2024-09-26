@@ -1,4 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+.pesa{
+    margin-top: 10%;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 150%;
+    line-height: 1.8; /* Aumenta el espacio entre líneas */
+    letter-spacing: 1px; /* Aumenta el espacio entre letras */
+}
+.contra{
+   
+    color: black;
+    background-color: #FAD514;
+    
+
+}
+
 .imagen {
     width: 200px;
     height: 200px;
@@ -12,22 +29,68 @@
     transform: rotate(360deg); /* Rotación completa */
 }
 
-.espe{
-    font-family: "Playwrite PE", cursive;
-    text-align: center;
-}
-h1{
-    text-align: left;
-}
 .texti{
-   
+    font-family: "Concert One", sans-serif;
     text-align: center;
 }
+
+/* Contenedor de las imágenes */
+.image-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Imagen vertical */
+.vertical-image {
+    width: 200px;
+    height: 400px;
+    object-fit: cover;
+    animation: fadeInUp 1.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Contenedor de imágenes horizontales */
+.horizontal-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Imágenes horizontales */
+.horizontal-image {
+    width: 400px;
+    height: 180px;
+    object-fit: cover;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+/* La segunda imagen tiene un ligero retraso */
+.horizontal-image:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+/* Definición de la animación con keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 /*opacity: 0; oculta el <h1> al principio.
 transform: translateY(50px); desplaza el texto hacia abajo 50 píxeles.
 La animación definida por @keyframes slideUp mueve el <h1> hacia su posición original y cambia su opacidad de 0 a 1.*/
-.animated-h1 {
+.animated{
+    
+    text-align: left;
     opacity: 0;
     transform: translateY(50px);
     animation: slideUp 2s ease-in-out forwards;
