@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //importacion de componentes locales y globales
-import { FooterComponent } from './footer/footer.component'; 
-import { NavbarComponent } from './navbar/navbar.component'; 
+import { FooterComponent } from './components/footer/footer.component'; 
+import { NavbarComponent } from './components/navbar/navbar.component'; 
 
 //componentes material
 import {MatIconModule} from '@angular/material/icon';

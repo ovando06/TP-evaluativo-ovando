@@ -8,12 +8,14 @@
     <button mat-menu-item routerLink="/inicio" class="barra">Inicio</button>
 
     <button mat-menu-item [matMenuTriggerFor]="producto" class="barra">Productos</button>
+
+    <button mat-menu-item routerLink="/admin">admin</button>
   </mat-menu>
 
 
   <div>
     <div class="logo" id="logo1">
-      <img src="../../../../../assets/logo.jpeg"  routerLink="/inicio" alt="">
+      <img src="../../../../../assets/logo.jpeg" routerLink="/inicio" alt="">
     </div>
   </div>
   <p class="titul">Vial Trucks</p>
@@ -28,16 +30,18 @@
 
   <!--MENU DESPLEGABLE -> PRODUCTOS -->
   <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
-  <mat-menu #producto="matMenu" >
+  <mat-menu #producto="matMenu">
     <button mat-menu-item class="found" [matMenuTriggerFor]="servicios">Servicios</button>
-    <button mat-menu-item routerLink="/acerca" class="found">Quienes somos</button>
+    <button mat-menu-item routerLink="/acerca" class="found">¿Quiénes somos?</button>
     <button mat-menu-item routerLink="/contacto" class="found">Contacto</button>
 
   </mat-menu>
 
+  <button id="menuAdmin" mat-button routerLink="/admin">Admin</button>
+
   <mat-menu #servicios="matMenu">
-    <button mat-menu-item routerLink="/servicios/mantenimiento" class="found" >Mantenimiento y Reparaciones</button>
- 
+    <button mat-menu-item routerLink="/servicios/mantenimiento" class="found">Mantenimiento y Reparaciones</button>
+
 
   </mat-menu>
 
@@ -47,16 +51,18 @@
   <!-- inicio de sesion y el registro de un nuevo usuario-->
   <button mat-button [matMenuTriggerFor]="usuario"><mat-icon class="icono">person</mat-icon></button>
   <mat-menu #usuario="matMenu">
-    <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/registro" class="personi">Registrarse</button>
-    <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/inicio-sesion" class="personi">Iniciar Sesión</button>
-    <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesion</button>
+    <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/registro"
+      class="personi">Registrarse</button>
+    <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/inicio-sesion" class="personi">Iniciar
+      Sesión</button>
+    <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesión</button>
   </mat-menu>
 
   <!--carrito-->
   <!--<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon class="icono">shopping_cart</mat-icon>
   </button>-->
-  
+
 
   <!--Label para modo oscuro-->
   <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>

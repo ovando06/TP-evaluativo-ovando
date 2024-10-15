@@ -15,7 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
 //solo importamos componentes globales
-import { SharedModule } from './modules/shared/components/shared.module'; 
+import { SharedModule } from './modules/shared/shared.module'; 
 
 //firebase -> importamos herramientas de la base de datos
 import { environment } from 'src/enviroment/enviroment';//vincula a la BD con la app

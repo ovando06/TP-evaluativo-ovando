@@ -68,39 +68,11 @@ export class IniciosesionComponent {
     nombre: '',
     apellido: '',
     email: '',
-    rol: '',
-    password: ''
+    password: '',
+    rol: ''
   }
   //funcion para iniciar sesion
   async iniciarsesion() {
-    //recibe la informacion ingresada desde el navegador
-    /* const credenciales = {
-       uid: this.usuarios.uid,
-       nombre: this.usuarios.nombre,
-       apellido: this.usuarios.apellido,
-       email: this.usuarios.email,
-       rol: this.usuarios.rol,
-       password: this.usuarios.password,
-     }
- 
-     //repetitiva para recorrer todos los usuarios locales
-     for(let i = 0; i<this.coleccionusuariosLocales.length; i++){
-       //usuarioLocal corresponde 
-       const usuariolocal= this.coleccionusuariosLocales[i];
- 
-       if(usuariolocal.nombre===credenciales.nombre&&usuariolocal.apellido===credenciales.apellido&&usuariolocal.email===
-         credenciales.email&&usuariolocal.rol===credenciales.rol&&usuariolocal.password===credenciales.password){
-           //notificamos al usuario que pudo ingresar
-         alert("ingresaste con exito");
-         //paramos a la funcion
-         break;
-       }
-       else{
-         alert("Ocurrio un error al iniciar sesion");
-         break;
-       }
-     }*/
-
     const credenciales = {
       email: this.usuarios.email,
       password: this.usuarios.password
@@ -149,9 +121,23 @@ export class IniciosesionComponent {
           text: "¡se pudo ingresar con exito!",
           icon: "success"
         });
-       
+        
+        //Almacenamos y enviamos por parámetro el rol de los datos de usuario obtenido
+        this.servicioAuth.setUsuarioRol(usuarioData.rol);  
+        
+        if(usuarioData.rol === "admin"){
+          console.log("Inicio de administrador");
 
-        this.servicioRutas.navigate(['/inicio']);
+          //Si es administradpr, redirecciona a la vista 'admin'
+          this.servicioRutas.navigate(['/admin']);
+        } else{
+          console.log("Inicio de visitante");
+
+          //Si es otro tipo de usuario, redirecciona al 'inicio'
+          this.servicioRutas.navigate(['/inicio']);
+        }
+
+       
       })
       .catch(err => {
         Swal.fire({
@@ -179,8 +165,8 @@ export class IniciosesionComponent {
       nombre: this.usuarios.nombre = '',
       apellido: this.usuarios.apellido = '',
       email: this.usuarios.email = '',
-      rol: this.usuarios.rol = '',
       password: this.usuarios.password = '',
+      rol: this.usuarios.rol=''
     }
   }
 }

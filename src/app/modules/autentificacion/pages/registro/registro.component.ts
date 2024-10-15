@@ -26,8 +26,8 @@ export class RegistroComponent {
     nombre: '',
     apellido: '',
     email: '',
-    rol: '',
     password: '',
+    rol: 'vis' //todos los usuarios al registrarse serán "visitantes"
   }
 
   //creamos coleccion de usuarios, tipo 'usuario' para arrays
@@ -143,8 +143,8 @@ export class RegistroComponent {
       nombre: this.usuarios.nombre = '',
       apellido: this.usuarios.apellido = '',
       email: this.usuarios.email = '',
-      rol: this.usuarios.rol = '',
       password: this.usuarios.password = '',
+      rol: 'vis' //todos los usuarios al registrarse serán "visitantes"
     }
   }
 

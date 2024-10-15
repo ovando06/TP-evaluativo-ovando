@@ -21,6 +21,10 @@ export class TableComponent {
 
   modalVisibleProducto: boolean = false;
 
+  nombreImagen!: string;
+
+  imagen!: string;
+
   //definimos formulario para los productos 
   /**
    * atributos alfanumericos (string) se inicializan con comillas simples
@@ -31,7 +35,7 @@ export class TableComponent {
     nombre: new FormControl('', Validators.required),
     descripcion: new FormControl('', Validators.required),
     categoria: new FormControl('', Validators.required),
-    imagen: new FormControl('', Validators.required),
+    //imagen: new FormControl('', Validators.required),
     alt: new FormControl('', Validators.required)
 
   })
@@ -50,19 +54,60 @@ export class TableComponent {
         nombre: this.producto.value.nombre!,
         descripcion: this.producto.value.descripcion!,
         categoria: this.producto.value.categoria!,
-        imagen: this.producto.value.imagen!,
+        imagen: "",
         alt: this.producto.value.alt!
 
       }
-      await this.servicioCrud.crearProducto(nuevoProducto)
-        .then(producto => {
-          alert("Ha agregado un nuevo producto con exito!");
+      await this.servicioCrud.subirimagen(this.nombreImagen, this.imagen, "productos")
+        .then(res => {
+          this.servicioCrud.obtenerURLimagen(res)
+          .then(url => {
+            this.servicioCrud.crearProducto(nuevoProducto, url)
+            .then(producto => {
+              Swal.fire({
+                title:"bien!",
+                text:"ha agregado un nuevo prodcuto con éxito",
+                icon:"success"
+              });
+            })
+            .catch(error => {
+              Swal.fire({
+                title:"oh no!",
+                text:"ha ocurrido un error al cargar un nuevo producto \n"+error,
+                icon:"error"
+              });
+            })
+          })
         })
-        .catch(error => {
-          alert("Ha ocurrido un error al cargar un producto")
-        })
+        
     }
 
+  }
+
+  //cargar imagenes
+  cargarimagen(event: any) {
+    //variable para obtener el archivo subido desde el html
+    let archivo = event.target.files[0];
+
+    //variable para crear un nuevo objeto de tipo "archivo" o "file" y leerlo
+    let reader = new FileReader();
+
+    if(archivo != undefined){
+      //llamammos a método readeAsdaraURL para leer toda la información recibida
+      //enviamos como parámetro el archivo.
+      //porque será el encargador de tener la info ingresada por el usuario
+      reader.readAsDataURL(archivo);
+
+      reader.onloadend = () => {
+        let url = reader.result;
+
+        if (url!= null){
+          this.nombreImagen = archivo.name;
+
+          this.imagen = url.toString();
+        }
+      }
+    }
   }
   
   //
@@ -74,12 +119,20 @@ export class TableComponent {
   }
 
   borrarProducto(){
-    this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto)
+    this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto, this.productoSeleccionado.imagen)
     .then(respuesta => {
-      alert("Se ha podido eliminar con exito!");
+      Swal.fire({
+        title:"bien!",
+        text:"se ha eliminado correctamente!",
+        icon:"success"
+      });
     })
     .catch(error => {
-      alert ("Ha ocurrido un error al eliminar el producto :( \n"+error);
+      Swal.fire({
+        title:"oh no!",
+        text:"ha ocurrido un error al cargar un nuevo producto \n"+error,
+        icon:"error"
+      });
     })
   }
 
@@ -92,11 +145,11 @@ export class TableComponent {
       autocompletar en el formulario del modal (menos el ID)
     */
     this.producto.setValue({
-      nombre: productoSeleccionado.nombre,
-      descripcion: productoSeleccionado.descripcion,
-      categoria: productoSeleccionado.categoria,
-      imagen: productoSeleccionado.imagen,
-      alt: productoSeleccionado.alt
+      nombre:this.producto.value.nombre!,
+      descripcion:this.producto.value.descripcion!,
+      categoria: this.producto.value.categoria!,
+      //imagen: productoSeleccionado.imagen,
+      alt: this.producto.value.alt!,
     })
   }
 
@@ -108,9 +161,38 @@ editarProducto(){
     nombre: this.producto.value.nombre!,
     descripcion: this.producto.value.descripcion!,
     categoria: this.producto.value.categoria!,
-    imagen: this.producto.value.imagen!,
+    imagen: this.productoSeleccionado.imagen,
     alt: this.producto.value.alt!,
   }
+
+  //vamos a verificar si el usuario ingresa o no, una nueva imagen
+  if(this.imagen){
+    this.servicioCrud.subirimagen(this.nombreImagen, this.imagen, "productos")
+    .then(res => {
+      this.servicioCrud.obtenerURLimagen(res)
+      .then(url => {
+        datos.imagen = url; //actualizamos la url de la imagen en los datos del formulario
+
+        this.actualizarProducto(datos);//actualizamos los datos
+
+        this.producto.reset();//vaciar las casillas del formulario
+      })
+      .catch(error => {
+        Swal.fire({
+          title: "Oh no!",
+          text:"Hubo un problema al subir la imagen :( \n"+error,
+          icon:"error",
+        })
+      })
+    } )
+  }else{
+    //actualizamos formulario con los dats recibidos del usuario pero sin modificar la imagen que ya
+    //existe en firestore y storage.
+    this.actualizarProducto(datos);
+  }
+
+
+
   this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos)
   .then(articulo =>{
     Swal.fire({
@@ -124,6 +206,28 @@ editarProducto(){
     Swal.fire({
       title: "error!",
       text: "error al editar el producto",
+      icon: "error"
+    });
+    this.producto.reset();
+  })
+}
+
+//ACTUALIZAR la información ya existente de los productos
+actualizarProducto(datos: Producto){
+  //enviamos al método el id jdel prodcuto seleccionado y los datos actualizads
+  this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos)
+  .then(articulo =>{
+    Swal.fire({
+      title: "bien!",
+      text: "se edito el producto con éxito!",
+      icon: "success",
+    });
+    this.producto.reset();
+  })
+  .catch(error => {
+    Swal.fire({
+      title: "error!",
+      text: "error al editar el producto \n"+error,
       icon: "error"
     });
     this.producto.reset();
