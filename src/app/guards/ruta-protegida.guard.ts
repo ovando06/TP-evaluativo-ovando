@@ -1,7 +1,7 @@
 import { CanActivateFn } from '@angular/router';
 
 //inyección de servicios
-import { inject, Inject } from '@angular/core';
+import { inject } from '@angular/core';
 
 //
 import { AuthService } from '../modules/autentificacion/services/auth.service';
@@ -22,5 +22,33 @@ export const rutaProtegidaGuard: CanActivateFn = (route, state) => {
   //Especficamos cuál es el rol que va a esperar el guardián para activarse
   const rolEsperado = "admin";
 
-  return true;
+//From => convierte una promesa en observable
+return from (servicioAuth.obtenerUid()).pipe(
+  switchMap(uid => {
+    if(uid) {
+      return servicioAuth.obtenerRol(uid).pipe(
+        map(rol => {
+          if(rol === rolEsperado){
+            //Si coincide el rol esperado, damos cceso al usuario.
+            console.log("Usuario verificado como administrador.")
+
+            return true;
+          }else{
+            //Denegamos acceso al usuario
+            return false;
+          }
+        })
+      )
+    }else{
+      console.log("Usuario no validado. Permisos insuficientes. ");
+      
+      //Redireccionamos acceso a inicio para usuarios no validados
+      //Usuario sin permiso: Visitante o NO regitrado
+      return of(servicioRutas.createUrlTree(['/inicio']));
+    }
+  })
+)
 };
+
+
+  
