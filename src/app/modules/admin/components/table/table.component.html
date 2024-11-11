@@ -1,4 +1,5 @@
 <!--TABLA DE PRODUCTOS-->
+<div class="table-responsive">
 <table class="tei">
   <!-- <div class="tablet"> -->
     <thead>
@@ -8,7 +9,9 @@
         <th scope="col">Nombre</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Categoria</th>
+        <th scope="col">Stock</th>
         <th scope="col" class="acc">Acciones</th>
+        
 
 
       </tr>
@@ -22,11 +25,12 @@
         <td class="olaf">{{producto.nombre}}</td>
         <td class="olaf">{{producto.descripcion}}</td>
         <td class="olaf">{{producto.categoria}}</td>
+        <td>{{producto.stock}}</td>
 
         <!--ACCIONES-->
         <td>
-          <button id="btn-edit" title="Editar" type="button" data-bs-toggle="#editarProducto" data-bs-target="modal"
-            class="btn btn-outline-primary acci">
+          <button id="btn-edit" title="Editar" type="button" data-bs-toggle="modal" data-bs-target="#editarProducto"
+            class="btn btn-outline-primary acci" (click)="mostrarEditar(producto)">
             <mat-icon>edit</mat-icon>
           </button>
         </td>
@@ -44,6 +48,7 @@
     <br>
   <!-- </div> -->
 </table>
+</div>
 <br>
 <!--MODAL -> LIVE DEMO-->
 <!-- BOTON DE AGREGAR NUEVOS PRODUCTOS-->
@@ -100,6 +105,13 @@
           <input class="form-control" type="text" formControlName="alt" placeholder="Ej: trabajo en flota liviana">
         </div>
 
+        <!--CARRITO-->
+
+        <div class="mb-3">
+          <label for="form-label">Ingrese su Stock: </label>
+          <input type="number" class="form-control" formControlName="stock" placeholder="Ej: 25">
+        </div>
+
 
 
 
@@ -143,7 +155,7 @@
 
 <!--modal para editar producto-->
 
-<div class="modal fade" *ngFor="let Producto of coleccionProductos" id="editarproductos" tabindex="-1"
+<div class="modal fade" *ngFor="let Producto of coleccionProductos" id="editarProducto" tabindex="-1"
   aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -161,11 +173,14 @@
           <input class="form-control" type="text" formControlName="nombre" placeholder="{{Producto.nombre}}">
         </div>
 
+        <!--descripcion-->
 
         <div class="mb-3">
           <label class="form-label">ingrese la descripcion del producto</label>
           <input class="form-control" type="text" formControlName="descripcion" placeholder="{{Producto.descripcion}}">
         </div>
+
+        <!--categoria-->
 
         <div class="mb-3">
           <label class="form-label">seleccionar una categoria</label>
@@ -177,16 +192,25 @@
 
         </div>
 
+        <!--imagen-->
 
         <div class="mb-3">
           <label class="form-label">ingrese la imagen del producto</label>
           <input type="file" accept="imagen/*" (change)="cargarimagen($event)">
         </div>
 
+        <!--alt-->
 
         <div class="mb-3">
           <label class="form-label">ingrese el alt del producto</label>
           <input class="form-control" type="text" formControlName="alt" placeholder="{{Producto.alt}}">
+        </div>
+
+        <!--carrito-->
+
+        <div class="mb-3">
+          <label for="form-label">Ingrese su Stock: </label>
+          <input type="number" class="form-control" formControlName="stock" placeholder="{{Producto.stock}}">
         </div>
 
 

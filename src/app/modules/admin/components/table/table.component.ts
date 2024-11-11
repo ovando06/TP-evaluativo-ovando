@@ -36,7 +36,8 @@ export class TableComponent {
     descripcion: new FormControl('', Validators.required),
     categoria: new FormControl('', Validators.required),
     //imagen: new FormControl('', Validators.required),
-    alt: new FormControl('', Validators.required)
+    alt: new FormControl('', Validators.required),
+    stock: new FormControl(0, Validators.required)
 
   })
   constructor(public servicioCrud: CrudService) { }
@@ -55,31 +56,32 @@ export class TableComponent {
         descripcion: this.producto.value.descripcion!,
         categoria: this.producto.value.categoria!,
         imagen: "",
-        alt: this.producto.value.alt!
+        alt: this.producto.value.alt!,
+        stock: this.producto.value.stock!
 
       }
       await this.servicioCrud.subirimagen(this.nombreImagen, this.imagen, "productos")
         .then(res => {
           this.servicioCrud.obtenerURLimagen(res)
-          .then(url => {
-            this.servicioCrud.crearProducto(nuevoProducto, url)
-            .then(producto => {
-              Swal.fire({
-                title:"bien!",
-                text:"ha agregado un nuevo prodcuto con éxito",
-                icon:"success"
-              });
+            .then(url => {
+              this.servicioCrud.crearProducto(nuevoProducto, url)
+                .then(producto => {
+                  Swal.fire({
+                    title: "bien!",
+                    text: "ha agregado un nuevo prodcuto con éxito",
+                    icon: "success"
+                  });
+                })
+                .catch(error => {
+                  Swal.fire({
+                    title: "oh no!",
+                    text: "ha ocurrido un error al cargar un nuevo producto \n" + error,
+                    icon: "error"
+                  });
+                })
             })
-            .catch(error => {
-              Swal.fire({
-                title:"oh no!",
-                text:"ha ocurrido un error al cargar un nuevo producto \n"+error,
-                icon:"error"
-              });
-            })
-          })
         })
-        
+
     }
 
   }
@@ -92,7 +94,7 @@ export class TableComponent {
     //variable para crear un nuevo objeto de tipo "archivo" o "file" y leerlo
     let reader = new FileReader();
 
-    if(archivo != undefined){
+    if (archivo != undefined) {
       //llamammos a método readeAsdaraURL para leer toda la información recibida
       //enviamos como parámetro el archivo.
       //porque será el encargador de tener la info ingresada por el usuario
@@ -101,7 +103,7 @@ export class TableComponent {
       reader.onloadend = () => {
         let url = reader.result;
 
-        if (url!= null){
+        if (url != null) {
           this.nombreImagen = archivo.name;
 
           this.imagen = url.toString();
@@ -109,129 +111,131 @@ export class TableComponent {
       }
     }
   }
-  
+
   //
-  mostrarBorrar(productoSeleccionado: Producto){
+  mostrarBorrar(productoSeleccionado: Producto) {
     //
     this.modalVisibleProducto = true;
 
     this.productoSeleccionado = productoSeleccionado;
   }
 
-  borrarProducto(){
+  borrarProducto() {
     this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto, this.productoSeleccionado.imagen)
-    .then(respuesta => {
-      Swal.fire({
-        title:"bien!",
-        text:"se ha eliminado correctamente!",
-        icon:"success"
-      });
-    })
-    .catch(error => {
-      Swal.fire({
-        title:"oh no!",
-        text:"ha ocurrido un error al cargar un nuevo producto \n"+error,
-        icon:"error"
-      });
-    })
+      .then(respuesta => {
+        Swal.fire({
+          title: "bien!",
+          text: "se ha eliminado correctamente!",
+          icon: "success"
+        });
+      })
+      .catch(error => {
+        Swal.fire({
+          title: "oh no!",
+          text: "ha ocurrido un error al cargar un nuevo producto \n" + error,
+          icon: "error"
+        });
+      })
   }
 
-    // EDITAR PRODUCTOS
+  // EDITAR PRODUCTOS
   // Se envía y llama al momento que tocamos botón "Editar" de la tabla
-  mostrarEditar(productoSeleccionado: Producto){
+  mostrarEditar(productoSeleccionado: Producto) {
     this.productoSeleccionado = productoSeleccionado;
     /*
       Toma los valores del producto seleccionado y los va a
       autocompletar en el formulario del modal (menos el ID)
     */
     this.producto.setValue({
-      nombre:this.producto.value.nombre!,
-      descripcion:this.producto.value.descripcion!,
+      nombre: this.producto.value.nombre!,
+      descripcion: this.producto.value.descripcion!,
       categoria: this.producto.value.categoria!,
       //imagen: productoSeleccionado.imagen,
       alt: this.producto.value.alt!,
+      stock: productoSeleccionado.stock
     })
   }
 
-editarProducto(){
-  let datos: Producto = {
-    //solo id producto no se modifica por el usuario
-    idProducto: this.productoSeleccionado.idProducto,
-    //los demas atributos reciben nueva informacion desde el usuario
-    nombre: this.producto.value.nombre!,
-    descripcion: this.producto.value.descripcion!,
-    categoria: this.producto.value.categoria!,
-    imagen: this.productoSeleccionado.imagen,
-    alt: this.producto.value.alt!,
-  }
+  editarProducto() {
+    let datos: Producto = {
+      //solo id producto no se modifica por el usuario
+      idProducto: this.productoSeleccionado.idProducto,
+      //los demas atributos reciben nueva informacion desde el usuario
+      nombre: this.producto.value.nombre!,
+      descripcion: this.producto.value.descripcion!,
+      categoria: this.producto.value.categoria!,
+      imagen: this.productoSeleccionado.imagen,
+      alt: this.producto.value.alt!,
+      stock: this.producto.value.stock!
+    }
 
-  //vamos a verificar si el usuario ingresa o no, una nueva imagen
-  if(this.imagen){
-    this.servicioCrud.subirimagen(this.nombreImagen, this.imagen, "productos")
-    .then(res => {
-      this.servicioCrud.obtenerURLimagen(res)
-      .then(url => {
-        datos.imagen = url; //actualizamos la url de la imagen en los datos del formulario
+    //vamos a verificar si el usuario ingresa o no, una nueva imagen
+    if (this.imagen) {
+      this.servicioCrud.subirimagen(this.nombreImagen, this.imagen, "productos")
+        .then(res => {
+          this.servicioCrud.obtenerURLimagen(res)
+            .then(url => {
+              datos.imagen = url; //actualizamos la url de la imagen en los datos del formulario
 
-        this.actualizarProducto(datos);//actualizamos los datos
+              this.actualizarProducto(datos);//actualizamos los datos
 
-        this.producto.reset();//vaciar las casillas del formulario
+              this.producto.reset();//vaciar las casillas del formulario
+            })
+            .catch(error => {
+              Swal.fire({
+                title: "Oh no!",
+                text: "Hubo un problema al subir la imagen :( \n" + error,
+                icon: "error",
+              })
+            })
+        })
+    } else {
+      //actualizamos formulario con los dats recibidos del usuario pero sin modificar la imagen que ya
+      //existe en firestore y storage.
+      this.actualizarProducto(datos);
+    }
+
+
+
+    this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos)
+      .then(articulo => {
+        Swal.fire({
+          title: "bien!",
+          text: "se edito el producto con éxito!",
+          icon: "success",
+        });
+        this.producto.reset();
       })
       .catch(error => {
         Swal.fire({
-          title: "Oh no!",
-          text:"Hubo un problema al subir la imagen :( \n"+error,
-          icon:"error",
-        })
+          title: "error!",
+          text: "error al editar el producto",
+          icon: "error"
+        });
+        this.producto.reset();
       })
-    } )
-  }else{
-    //actualizamos formulario con los dats recibidos del usuario pero sin modificar la imagen que ya
-    //existe en firestore y storage.
-    this.actualizarProducto(datos);
   }
 
-
-
-  this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos)
-  .then(articulo =>{
-    Swal.fire({
-      title: "bien!",
-      text: "se edito el producto con éxito!",
-      icon: "success",
-    });
-    this.producto.reset();
-  })
-  .catch(error => {
-    Swal.fire({
-      title: "error!",
-      text: "error al editar el producto",
-      icon: "error"
-    });
-    this.producto.reset();
-  })
-}
-
-//ACTUALIZAR la información ya existente de los productos
-actualizarProducto(datos: Producto){
-  //enviamos al método el id jdel prodcuto seleccionado y los datos actualizads
-  this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos)
-  .then(articulo =>{
-    Swal.fire({
-      title: "bien!",
-      text: "se edito el producto con éxito!",
-      icon: "success",
-    });
-    this.producto.reset();
-  })
-  .catch(error => {
-    Swal.fire({
-      title: "error!",
-      text: "error al editar el producto \n"+error,
-      icon: "error"
-    });
-    this.producto.reset();
-  })
-}
+  //ACTUALIZAR la información ya existente de los productos
+  actualizarProducto(datos: Producto) {
+    //enviamos al método el id jdel prodcuto seleccionado y los datos actualizads
+    this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos)
+      .then(articulo => {
+        Swal.fire({
+          title: "bien!",
+          text: "se edito el producto con éxito!",
+          icon: "success",
+        });
+        this.producto.reset();
+      })
+      .catch(error => {
+        Swal.fire({
+          title: "error!",
+          text: "error al editar el producto \n" + error,
+          icon: "error"
+        });
+        this.producto.reset();
+      })
+  }
 
 }

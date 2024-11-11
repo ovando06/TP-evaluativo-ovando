@@ -27,7 +27,7 @@ export class RegistroComponent {
     apellido: '',
     email: '',
     password: '',
-    rol: 'vis' //todos los usuarios al registrarse serán "visitantes"
+    rol: 'usuario' //todos los usuarios al registrarse serán "visitantes"
   }
 
   //creamos coleccion de usuarios, tipo 'usuario' para arrays

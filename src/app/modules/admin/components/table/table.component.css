@@ -1,37 +1,76 @@
-.tei{
-    background-color: #fad414d8;
-    border-radius: 5px;
-    
-}
-@media(min-width: 350px) and (max-width: 750px) {
-    .imgTable {
-        width: 2rem;
-        object-fit: contain;
+/* Estilos generales de la tabla */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .tei {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tei th, .tei td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  /* Estilos para computadoras de escritorio (pantallas anchas) */
+  @media (min-width: 992px) {
+    .tei th, .tei td {
+      font-size: 16px;
     }
-    .acci{
-        width: 15px;
+    .tei img {
+      width: 100px; /* tamaño de imagen en escritorio */
+      height: auto;
     }
-}
-
-@media(min-width: 750px) {
-    .imgTable {
-        width: 500px;
-        border-radius: 5%;
-       
+  }
+  
+  /* Estilos para tablets (pantallas medianas) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* Cambia el tamaño de fuente y espacio de celdas */
+    .tei th, .tei td {
+      font-size: 14px;
+      padding: 6px;
     }
-
-    .acc{
-        padding-left: 60px;
+  
+    /* Muestra la imagen en un tamaño más pequeño */
+    .tei img {
+      width: 80px;
+      height: auto;
     }
-
-    .olaf{
-    
-        padding-right: 5%;
-        text-align: center;
+  }
+  
+  /* Estilos para dispositivos móviles (pantallas pequeñas) */
+  @media (max-width: 767px) {
+    /* Oculta algunas columnas para simplificar la vista */
+    .tei thead th:nth-child(1), /* Oculta el número */
+    .tei thead th:nth-child(6) { /* Oculta acciones */
+      display: none;
     }
-    th{
-        padding-right: 5%;
+  
+    .tei tbody td:nth-child(1),
+    .tei tbody td:nth-child(6) {
+      display: none;
     }
-
-    
-}
+  
+    /* Convierte las filas en "tarjetas" */
+    .tei tbody tr {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .tei tbody td {
+      display: block;
+      text-align: left;
+    }
+  
+    /* Muestra la imagen en un tamaño más pequeño en móviles */
+    .tei img {
+      width: 60px;
+      height: auto;
+    }
+  }
+  
