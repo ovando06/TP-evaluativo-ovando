@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { Producto } from 'src/app/models/producto';
 
 //IMPORTAMOS INTERFAZ
 import { Servicios } from 'src/app/models/servicios';
+
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -12,7 +15,9 @@ export class CardComponent {
   public info: Servicios[];
 
   //inicializar la propiedad info 
-  constructor(){
+  constructor(
+   
+  ){
     //
     this.info=[
       {
@@ -45,5 +50,7 @@ export class CardComponent {
       },
     ]
   }
+
+  
 
 }

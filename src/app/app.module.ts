@@ -22,11 +22,11 @@ import { environment } from 'src/enviroment/enviroment';//vincula a la BD con la
 import { AngularFireModule } from '@angular/fire/compat';// trabaja con las colecciones de infomarcion
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';// trabaja con la autentificacion
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { PedidoComponent } from './modules/components/pedido/pedido.component';
+
 @NgModule({ 
   declarations: [
     AppComponent,
-    PedidoComponent,
+    
     
   ],
   imports: [

@@ -23,7 +23,8 @@ const routes: Routes = [
     path:"", loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule),
     //Definir al guardián que proteja la ruta de Admin y que espere un rol de tipo "admin"
     canActivate: [rutaProtegidaGuard ], data:{ role: 'admin'}
-  }
+  },
+ 
 ];
 
 @NgModule({

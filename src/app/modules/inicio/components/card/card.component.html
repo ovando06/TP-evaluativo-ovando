@@ -1,12 +1,21 @@
 <br>
 <div class="container">
   <div class="row">
+
     <div *ngFor="let i of info" class="col">
+
       <div class="contenido">
+
         <div class="card">
+
           <img src="{{i.imagen}}" class="card-img-top" alt="...">
+
           <div class="card-body">
+
             <h5 class="card-title">{{i.servicio}}</h5>
+
+            
+
             <a  routerLink="/contacto" class="btn btn-primary">Contratar</a>
           </div>
         </div>

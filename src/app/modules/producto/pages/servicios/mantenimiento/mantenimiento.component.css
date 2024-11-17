@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+.trabajo{
+    font-family: "Tilt Warp", sans-serif;
+    text-align: center;
+    font-size: 300%;
+    color: black;
+}
+  
+
+
 .pesa{
     margin-top: 10%;
     font-family: "Josefin Sans", sans-serif;
@@ -37,6 +47,7 @@
 /* Contenedor de las imágenes */
 .image-container {
     display: flex;
+    flex-wrap: wrap; /* Permite reorganizar en nuevas filas */
     align-items: flex-start;
     justify-content: center;
     gap: 20px;
@@ -44,8 +55,9 @@
 
 /* Imagen vertical */
 .vertical-image {
-    width: 200px;
-    height: 400px;
+    width: 100%; /* Responsiva */
+    max-width: 200px; /* Ancho máximo */
+    height: auto; /* Mantiene la proporción */
     object-fit: cover;
     animation: fadeInUp 1.5s ease forwards;
     animation-delay: 0.5s;
@@ -56,12 +68,15 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%; /* Ajusta el ancho del contenedor */
+    max-width: 400px; /* Límites para pantallas grandes */
 }
 
 /* Imágenes horizontales */
 .horizontal-image {
-    width: 400px;
-    height: 180px;
+    width: 100%; /* Ocupa el ancho disponible */
+    max-width: 400px; /* Define un ancho máximo */
+    height: auto; /* Mantiene la proporción */
     object-fit: cover;
     animation: fadeInUp 1.5s ease forwards;
 }
@@ -70,6 +85,35 @@
 .horizontal-image:nth-child(2) {
     animation-delay: 0.5s;
 }
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 480px) {
+    .image-container {
+        flex-direction: column; /* Cambia a una sola columna */
+        align-items: center; /* Centra el contenido */
+    }
+
+    /* Coloca las imágenes después del texto */
+    .horizontal-images,
+    .vertical-image {
+        order: 2; /* Asegura que las imágenes queden abajo */
+    }
+
+    /* El texto se coloca primero */
+    .text-container {
+        order: 1; /* Asegura que el texto quede primero */
+        text-align: center; /* Centra el texto */
+        padding: 10px;
+    }
+
+    /* Tamaño reducido de las imágenes */
+    .vertical-image,
+    .horizontal-image {
+        max-width: 80%; /* Reduce el tamaño al 80% del ancho */
+        height: auto; /* Mantiene proporciones */
+    }
+}
+
 
 /* Definición de la animación con keyframes */
 @keyframes fadeInUp {

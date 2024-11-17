@@ -1,0 +1,44 @@
+/* Ajustes para las tarjetas */
+.card {
+    width: 100%;
+    /* Las tarjetas ocuparán todo el ancho disponible en la columna */
+    max-width: 300px;
+    /* Límite de ancho para que no se expandan demasiado */
+    margin: auto;
+    /* Centrar las tarjetas */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste de la imagen dentro de la tarjeta */
+.card-img-top {
+    max-height: 200px;
+    /* Altura máxima */
+    object-fit: cover;
+    /* Recorta la imagen manteniendo proporciones */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Contenedor general */
+.contenido {
+    display: flex;
+    flex-wrap: wrap;
+    /* Hacer que las tarjetas se acomoden en varias filas */
+    justify-content: space-around;
+    /* Espaciado uniforme entre las columnas */
+    gap: 20px;
+    /* Espacio entre tarjetas */
+}
+
+.contrate{
+    border-radius: 10%;
+    background-color: rgb(255, 255, 107);
+    color: black;
+    font-style: bold;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

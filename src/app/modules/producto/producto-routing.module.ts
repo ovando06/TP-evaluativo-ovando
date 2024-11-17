@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path:"contacto",component: ContactoComponent
   },
-
+ 
 ];
 
 @NgModule({

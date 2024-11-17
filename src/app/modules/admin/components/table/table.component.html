@@ -1,16 +1,15 @@
 <!--TABLA DE PRODUCTOS-->
 <div class="table-responsive">
-<table class="tei">
+<table class="table table-striped table-hover align-middle">
   <!-- <div class="tablet"> -->
-    <thead>
+    <thead class="table-primary">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Imagen</th>
         <th scope="col">Nombre</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Categoria</th>
-        <th scope="col">Stock</th>
-        <th scope="col" class="acc">Acciones</th>
+        <th scope="col" colspan="2">Acciones</th>
         
 
 
@@ -18,26 +17,26 @@
     </thead>
     <br>
     <tbody>
-      <tr *ngFor="let producto of coleccionProductos">
-        <th scope="col">1</th>
+      <tr *ngFor="let producto of coleccionProductos; let i = index">
+        <th data-label="#">{{ i+1 }}</th>
 
-        <td><img class="imgTable" src="{{producto.imagen}}" alt="{{producto.alt}}"></td>
-        <td class="olaf">{{producto.nombre}}</td>
-        <td class="olaf">{{producto.descripcion}}</td>
-        <td class="olaf">{{producto.categoria}}</td>
-        <td>{{producto.stock}}</td>
+        <td data-label="Imagen"><img class="img-thumbnail img-fluid" src="{{producto.imagen}}" alt="{{producto.alt}}"></td>
+        <td data-label="nombre">{{producto.nombre}}</td>
+        <td data-label="descripción">{{producto.descripcion}}</td>
+        <td data-label="categoría">{{producto.categoria}}</td>
+        
 
         <!--ACCIONES-->
-        <td>
-          <button id="btn-edit" title="Editar" type="button" data-bs-toggle="modal" data-bs-target="#editarProducto"
+        <td data-label="editar">
+          <button id="btn-edit" title="Editar" type="button"  class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editarProducto"
             class="btn btn-outline-primary acci" (click)="mostrarEditar(producto)">
-            <mat-icon>edit</mat-icon>
+            <i class="bi bi-pencil"></i> 
           </button>
         </td>
-        <td>
-          <button id="btn-delete" title="Eliminar" type="button" class="btn btn-outline-danger acci" data-bs-toggle="modal"
+        <td data-label="eliminar">
+          <button id="btn-delete" title="Eliminar" type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
             data-bs-target="#eliminarProducto" (click)="mostrarBorrar(producto)">
-            <mat-icon>delete</mat-icon>
+            <i class="bi bi-trash"></i>
           </button>
         </td>
 
@@ -86,7 +85,7 @@
           <label class="form-label">Seleccione una categoria</label>
           <select class="form-control" formControlName="categoria" class="form-select">
             <option selected>Elija una opcion</option>
-            <option value="servicios">servicios</option>
+            <option value="servicios">Mantenimiento y Reparación</option>
           </select>
         </div>
 
@@ -105,12 +104,7 @@
           <input class="form-control" type="text" formControlName="alt" placeholder="Ej: trabajo en flota liviana">
         </div>
 
-        <!--CARRITO-->
-
-        <div class="mb-3">
-          <label for="form-label">Ingrese su Stock: </label>
-          <input type="number" class="form-control" formControlName="stock" placeholder="Ej: 25">
-        </div>
+       
 
 
 
@@ -206,12 +200,6 @@
           <input class="form-control" type="text" formControlName="alt" placeholder="{{Producto.alt}}">
         </div>
 
-        <!--carrito-->
-
-        <div class="mb-3">
-          <label for="form-label">Ingrese su Stock: </label>
-          <input type="number" class="form-control" formControlName="stock" placeholder="{{Producto.stock}}">
-        </div>
 
 
 

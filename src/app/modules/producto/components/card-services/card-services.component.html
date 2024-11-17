@@ -1,0 +1,12 @@
+<!--Card para mostrar TODOS los productos que el admin ingrese a la BD-->
+<div class="contenido">
+  <div class="card" *ngFor="let producto of coleccionServicios">
+    <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
+    <div class="card-body text-center">
+      <h5 class="card-title">{{producto.nombre}}</h5>
+      <p class="card-text">{{producto.descripcion}}</p>
+      <button type="button" routerLink="/contacto" class="btn btn-primary">Más Info</button>
+    </div>
+   
+  </div>
+</div>

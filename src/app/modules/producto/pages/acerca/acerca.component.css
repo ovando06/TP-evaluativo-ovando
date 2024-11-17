@@ -1,89 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kalnia+Glaze:wght@100..700&family=Suez+One&family=Ultra&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kalnia+Glaze:wght@100..700&family=Play:wght@400;700&family=Suez+One&family=Teko:wght@300..700&family=Ultra&display=swap');
-.container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.imagen {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-}
-
-.imagen1 {
-    left: -20%;
-    /* Empieza fuera del viewport a la izquierda */
-    animation: slideIn1 1s ease-in-out forwards;
-}
-
-.imagen2 {
-    left: -20%;
-    /* Empieza fuera del viewport a la izquierda */
-    animation: slideIn2 1s ease-in-out 0.5s forwards;
-    /* Segunda imagen con retraso */
-}
-
-/* Animaciones */
-@keyframes slideIn1 {
-    to {
-        left: 5%;
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn2 {
-    to {
-        left: 10%;
-        opacity: 1;
-    }
-}
-
-/* Medidas responsivas */
-@media (max-width: 768px) {
-    .imagen1, .imagen2 {
-        left: -40%;
-        animation-duration: 1.5s;
-    }
-
-    @keyframes slideIn1 {
-        to {
-            left: 10%;
-            opacity: 1;
-        }
-    }
-
-    @keyframes slideIn2 {
-        to {
-            left: 15%;
-            opacity: 1;
-        }
-    }
-}
-
-@media (max-width: 480px) {
-    .imagen1, .imagen2 {
-        left: -50%;
-        animation-duration: 2s;
-    }
-
-    @keyframes slideIn1 {
-        to {
-            left: 15%;
-            opacity: 1;
-        }
-    }
-
-    @keyframes slideIn2 {
-        to {
-            left: 20%;
-            opacity: 1;
-        }
-    }
-}
-
 p{
     font-size: 110%;
 }
@@ -123,53 +39,41 @@ u{
 }
 
 
-/*Las medidas vh y vw son medidas relativas de acuerdo al viewport. Vh hace referencia a la centésima parte
- de la altura del viewport y vw a la centésima parte del ancho del viewport. 1vh = 1% de la altura del viewport*/
-.container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+
+/* Animación definida */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Aparece un poco más abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Vuelve a su posición original */
+    }
 }
 
-.imagen {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
+/* Aplica la animación solo cuando el elemento se carga */
+.fade-in {
+    opacity: 0; /* Estado inicial invisible */
+    animation: fadeIn 0.8s ease forwards; /* La animación dura 0.8s */
 }
 
-/*
-animation: Controla la duración y el retraso de cada imagen. La primera imagen tiene una animación que empieza inmediatamente,
- mientras que la segunda tiene un retraso de 0.5 segundos.
+/* Retraso progresivo por orden en la página */
+.fade-in:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.fade-in:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+/* Continúa añadiendo delays según el orden de los elementos si tienes más */
+
  
-forwards: Asegura que las imágenes permanezcan en su posición final después de la animación.*/
-
-.imagen1 {
-    left: -250px;
-    /* Empieza fuera del viewport a la izquierda */
-    animation: slideIn1 1s ease-in-out forwards;
-}
-
-.imagen2 {
-    left: -250px;
-    /* Empieza fuera del viewport a la izquierda */
-    animation: slideIn2 1s ease-in-out 0.5s forwards;
-    /* Segunda imagen con retraso */
-}
-
-/*@keyframes: Define el movimiento de las imágenes de izquierda a derecha.*/
-@keyframes slideIn1 {
-    to {
-        left: 100px;
-        /* Posición final */
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn2 {
-    to {
-        left: 700px;
-        /* Posición final */
-        opacity: 1;
-    }
+ /* Ajustes de estilo general para las imágenes */
+.imagen {
+    width: 100%;
+    max-width: 300px; /* Puedes ajustar el tamaño máximo según sea necesario */
+    height: auto;
+    margin: auto;
 }
